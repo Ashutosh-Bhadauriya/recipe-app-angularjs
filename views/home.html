@@ -1,0 +1,25 @@
+<div class="main">
+  <div class="search-bar">
+    <input
+      class="search-input"
+      type="text"
+      ng-model="search"
+      ng-model-options="{debounce: 400}"
+      placeholder="Enter Recipe Name"
+    />
+  </div>
+
+  <div class="search-result">
+    <div dir-paginate="recipe in recipes | itemsPerPage: 4">
+      <div class="recipe-box">
+        <img ng-src="{{recipe.recipe.image}}" alt="" />
+        <h2>{{recipe.recipe.label}}</h2>
+        <p>Meal Type: {{recipe.recipe.mealType}}</p>
+        <p>Total Time: {{recipe.recipe.totalTime}}</p>
+        <p>Source: {{recipe.recipe.source}}</p>
+        <button class="detail-button" ng-click="diplayDetails(recipe.recipe.uri)">View Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+<dir-pagination-controls class="pagination"></dir-pagination-controls>

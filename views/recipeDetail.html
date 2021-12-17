@@ -1,0 +1,20 @@
+<div class="recipe-details">
+  <h1>{{recipe.label}}</h1>
+  <div class="recipe-detail-inner">
+    <img class="detail-image" ng-src="{{recipe.image}}" alt="" />
+    <div class="detail-list">
+      <p>Calories: {{recipe.calories}}</p>
+      <p>Diet Label: {{recipe.dietLabels}}</p>
+      <p>Cuisine Type: {{recipe.cuisineType}}</p>
+      <p>Total Time: {{recipe.totalTime}}</p>
+      <p>Source: {{recipe.source}}</p>
+      <p>Meal Type: {{recipe.mealType}}</p>
+      <p>
+        Ingredients:
+        <span ng-repeat="ingredient in recipe.ingredientLines">
+          {{ingredient}}
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
